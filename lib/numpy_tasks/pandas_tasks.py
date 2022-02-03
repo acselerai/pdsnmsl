@@ -101,3 +101,11 @@ book_info = pd.pivot_table(
 
 print(book_info)
 tools.print_separator()
+
+book_info.to_pickle('./book_info.pkl')
+
+book_info_2 = pd.read_pickle('./book_info.pkl')
+
+print(f'Comparation of book_info and book_info_2: {book_info.eq(book_info_2)}')
+
+tools.print_separator()
